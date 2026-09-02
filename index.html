@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Cucaracha Love ❤️</title>
+
+    <link rel="stylesheet" href="CSS/style.css">
+   <link rel="apple-touch-icon" sizes="180x180" href="Favicon/apple-touch-icon.png">
+   <link rel="apple-touch-icon" sizes="180x180" href="Favicon/android-chrome-192x192.png">
+   <link rel="apple-touch-icon" sizes="180x180" href="Favicon/android-chrome-512x512.png">
+<link rel="icon" type="image/png" sizes="32x32" href="Favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="Favicon/favicon-16x16.png">
+<link rel="manifest" href="Favicon/site.webmanifest">
+   
+    
+
+</head>
+
+<body>
+
+    <!--==============================
+        FONDO
+    ===============================-->
+
+    <div class="background">
+
+        <span class="blob blob1"></span>
+        <span class="blob blob2"></span>
+        <span class="blob blob3"></span>
+
+    </div>
+
+
+    <!--==============================
+        PANTALLA INICIAL
+    ===============================-->
+
+    <div class="welcome-screen" id="welcome">
+
+        <div class="welcome-card">
+
+            <img
+                src="img/cucaracha-love.jpg"
+                class="welcome-image"
+                alt="Cucaracha Love"
+                onerror="this.src='img/Perfil.jpg'">
+
+            <p class="welcome-text">
+                Tu próxima historia de amor podría estar a una cucaracha de distancia. 
+            </p>
+
+            <button id="btnStart" class="start-button">
+                💕 ¡Comencemos! 💕
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!--==============================
+        FORMULARIO DE NOMBRE
+    ===============================-->
+
+    <div class="name-screen oculto" id="nameScreen">
+
+        <div class="name-card">
+
+            <div class="name-icon">🥰❤️😘</div>
+
+            <h2>Antes de comenzar...</h2>
+
+            <p>
+                Queremos saber algo sobre vos 👀
+            </p>
+
+            <label for="userName">
+                ¿Cómo te llamás?
+            </label>
+
+            <input
+                type="text"
+                id="userName"
+                placeholder="Escribí tu nombre"
+                autocomplete="name"
+                maxlength="50">
+
+            <button id="btnNameContinue" class="like">
+                ❤️ Entrar a Cucaracha Love ❤️
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!--==============================
+        TARJETA PRINCIPAL
+    ===============================-->
+
+    <div class="card oculto" id="home">
+
+        <span class="premium">
+            PREMIUM
+        </span>
+
+        <img src="img/Perfil.jpg"
+             class="perfil"
+             alt="Perfil de Gabriel">
+
+        <h1>
+            Gabriel
+
+        </h1>
+
+        <p>
+              25 años • Buenos Aires
+        </p>
+
+        <p class="descripcion">
+            Fanático de los gatos 🐱
+            <br>
+            Cocino muy bien 🍕
+            <br>
+            Cerveza artesanal 🍺
+        </p>
+
+        <div class="botones">
+
+            <button
+                id="btnLike"
+                class="like">
+                ❤️ Match
+            </button>
+
+            <button
+                id="btnReject"
+                class="reject">
+                ❌ Rechazar
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!--==============================
+        PANTALLA MATCH
+    ===============================-->
+
+    <div
+        id="matchScreen"
+        class="match-screen oculto">
+
+        <div class="match-card">
+
+            <div class="match-photo-column">
+
+                <span class="match-badge">❤️ MATCH</span>
+
+                <img
+                    src="img/Perfil.jpg"
+                    class="match-image"
+                    alt="Gabriel">
+
+                <h2>
+                    ¡Excelente decisión, <span id="matchUserName">vos</span>! 😏
+                </h2>
+
+                <p>
+                    Ahora solo falta coordinar la cita con Gabriel. ❤️
+                </p>
+
+            </div>
+
+            <div class="match-form-column">
+
+                <h2>📅 Coordinemos la cita</h2>
+
+                <p class="match-subtitle">
+                    Completá estos datos y Gabriel se pondrá en contacto con vos.
+                </p>
+
+                <form id="matchForm">
+
+                    <div class="form-group">
+                        <label for="matchName">Nombre</label>
+                        <input
+                            type="text"
+                            id="matchName"
+                            name="name"
+                            readonly
+                            required>
+                    </div>
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+                            <label for="matchDate">📅 Fecha</label>
+                            <input
+                                type="date"
+                                id="matchDate"
+                                name="date"
+                                required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="matchTime">🕐 Hora</label>
+                            <input
+                                type="time"
+                                id="matchTime"
+                                name="time"
+                                required>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="matchMessage">💌 Algo que quieras decirle</label>
+                        <textarea
+                            id="matchMessage"
+                            name="message"
+                            placeholder="Ej: Tengo muchas ganas de conocerte... 👀"
+                            rows="5"></textarea>
+                    </div>
+
+                    <input type="hidden" name="decision" value="Match">
+                    <input type="hidden" name="_subject" value="❤️ Nuevo Match en Cucaracha Love">
+                    <input type="hidden" name="_template" value="table">
+
+                    <button
+                        type="submit"
+                        class="confirm-match-button">
+                        ❤️ Confirmar cita
+                    </button>
+
+                    <button
+                        type="button"
+                        id="btnCancelMatch"
+                        class="cancel-match-button">
+                        ❌ Cancelar
+                    </button>
+
+                   
+
+                </form>
+
+                <p id="matchStatus" class="match-status"></p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!--==============================
+        MATCH CONFIRMADO
+    ===============================-->
+
+    <div
+        id="matchSuccess"
+        class="pantalla oculto">
+
+        <div class="success-card">
+
+            <div class="success-icon">❤️</div>
+
+            <h2>¡Match confirmado!</h2>
+
+            <p>
+                Perfecto, <strong id="successUserName">vos</strong>. 🪳❤️
+                <br><br>
+                Gabriel ya recibió los datos de la cita.
+                <br>
+                Ahora solo queda esperar... 👀
+            </p>
+
+            <button id="btnMatchRestart" class="like">
+                Volver al inicio
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!--==============================
+        MODAL
+    ===============================-->
+
+    <div id="modal" class="modal oculto">
+  <div class="modal-content">
+    <h2 id="modalTitle"></h2>
+    <p id="modalText"></p>
+
+
+      <textarea
+        id="modalReason"
+        name="motivo"
+        placeholder="Escriba aquí..."
+        class="oculto"></textarea>
+
+      <div id="modalButtons"></div>
+    </div>
+</div>
+
+
+    <!--==============================
+        GALERÍA
+    ===============================-->
+
+    <div
+        id="gallery"
+        class="pantalla oculto">
+
+        <h2>
+            Cucaracha Love ❤️
+        </h2>
+
+        <p class="gallery-text">
+            Antes de completar la solicitud, debe ver un compilado de fotos
+            de <strong>Gabriel</strong> junto a gatitos bebés.
+            <br><br>
+        </p>
+
+        <img
+            id="catImage"
+            class="cat-image"
+            alt="Gabriel junto a gatitos bebés">
+
+        <div class="gallery-controls">
+
+            <button id="btnPrev">
+                ⬅
+            </button>
+
+            <span id="galleryCounter">
+                1 / 2
+            </span>
+
+            <button id="btnNext">
+                ➡
+            </button>
+
+        </div>
+
+        <div id="catDecision" class="cat-decision oculto">
+
+            <button id="btnCatMatch" class="like">
+                ❤️ ¡Qué tierno! ¡Quiero Match!
+            </button>
+
+            <button id="btnNoHeart" class="reject">
+                💔 Al rechazar acepto que no tengo corazón
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!--==============================
+        LOADING
+    ===============================-->
+
+    <div
+        id="loading"
+        class="pantalla oculto">
+
+        <h2>
+            Procesando solicitud...
+        </h2>
+
+        <div class="progress">
+            <div id="progressBar"></div>
+        </div>
+
+        <p id="loadingText">
+            Validando suscripción Premium...
+        </p>
+
+
+    </div>
+
+
+    <!--==============================
+        FINAL
+    ===============================-->
+
+    <div
+        id="final"
+        class="pantalla oculto">
+
+        <img
+            src="img/final.jpg"
+            class="final-image"
+            alt="Final-image">
+
+        <h2>
+            ☠ WARNING
+        </h2>
+
+        <p>
+             Ni tan linda eras igual, <s>PUTA</s> DE MIERDA
+        </p>
+
+        <button id="btnRestart">
+            Volver al inicio
+        </button>
+
+    </div>
+
+
+    <script src="JS/script.js"></script>
+
+</body>
+
+</html>
